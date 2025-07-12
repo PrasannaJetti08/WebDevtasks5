@@ -1,0 +1,69 @@
+:root {
+  --bg: #f4f4f4;
+  --text: #111;
+  --card: #fff;
+  --header: #0077cc;
+}
+
+body.dark {
+  --bg: #1e1e1e;
+  --text: #f0f0f0;
+  --card: #2a2a2a;
+  --header: #444;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
+  margin: 0;
+  padding-bottom: 50px;
+}
+
+header {
+  background: var(--header);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+#theme-toggle {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+#search {
+  margin-top: 10px;
+  padding: 7px;
+  width: 70%;
+}
+
+main {
+  padding: 20px;
+}
+
+article {
+  background: var(--card);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+footer {
+  background: var(--header);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

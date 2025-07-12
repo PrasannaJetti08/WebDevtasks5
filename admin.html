@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+  <header><h1>Add New Post</h1></header>
+  <main>
+    <form id="postForm">
+      <input type="text" id="title" placeholder="Title" required><br><br>
+      <textarea id="content" placeholder="Content" required></textarea><br><br>
+      <input type="text" id="link" placeholder="Link to post (e.g., posts/post2.html)" required><br><br>
+      <button type="submit">Add Post</button>
+    </form>
+  </main>
+  <footer>&copy; 2025 My Blog</footer>
+  <script>
+    document.getElementById("postForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const title = document.getElementById("title").value;
+      const content = document.getElementById("content").value;
+      const link = document.getElementById("link").value;
+
+      const post = {
+        title, content, link,
+        date: new Date().toLocaleDateString()
+      };
+
+      const posts = JSON.parse(localStorage.getItem("blogPosts")) || [];
+      posts.unshift(post); // newest first
+      localStorage.setItem("blogPosts", JSON.stringify(posts));
+      alert("Post added!");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
